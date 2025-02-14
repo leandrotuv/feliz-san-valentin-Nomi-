@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>para mi niña preciosa🥺🤍</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            color: #df1cdf;
+            background-image: url("beso.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-y: auto;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(240, 240, 240, 0.5), rgba(224, 224, 224, 0.5));
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%; /* Ocupa todo el ancho en móviles */
+        }
+
+        .video-container {
+            width: 90%; /* Video más ancho en móviles */
+            max-width: 800px;
+            margin: 10px auto; /* Márgenes reducidos en móviles */
+            position: relative;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            border: 5px solid #ff69b4;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        h1,h1 {
+            margin-top: 10px; /* Margen superior reducido en móviles */
+            text-align: center;
+            font-size: 1.5em; /* Tamaño de fuente más pequeño en móviles */
+        }
+
+        .text-content {
+            font-size: 1em; /* Tamaño de fuente más pequeño en móviles */
+            line-height: 1.4; /* Espaciado entre líneas reducido en móviles */
+            padding: 0 10px; /* Padding reducido en móviles */
+            margin-bottom: 10px; /* Margen inferior reducido en móviles */
+            text-align: center; /* Texto centrado en móviles */
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .heart,
+        .hello-kitty {
+            position: absolute;
+            animation: float 5s linear infinite;
+            font-size: 1.2em; /* Tamaño más pequeño en móviles */
+        }
+
+        .heart {
+            color: #ff69b4;
+        }
+
+        .hello-kitty {
+            background-image: url(".png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 1.2em; /* Tamaño más pequeño en móviles */
+            height: 1.2em; /* Tamaño más pequeño en móviles */
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: translate(15px, -8px); /* Movimiento ajustado para móviles */
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 0.8;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>feliz san valentin 🥺🤍</h1>
+        <h1>bueno mi niña jsjs ya llego al final sjsj te quiero recordar que te amooo un monton mi tiquitita preciosa  🥺🤍</h1>
+
+        <div class="video-container">
+            <video controls>
+                <source src="mi tiquitita.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de videos.
+            </video>
+        </div>
+
+        <div class="text-content">
+            bueno mi princesa llegamos al final jsj no alcanze hacer la carta jsjs ya mismo lo hago mi tiquitita solo espero que te aya gustado lo hize con mucho jsjs te amo mucho y demasiado y si quiere presumir haguelo es su regalo recuerda que soy un muchacho que te adora much o solo cuidame y quiereme 
+            feliz 14 de frebrero como dia del amor y amistad te amooo ❤️🥺🤍
+        </div>
+
+        <div class="video-container">
+            <video controls>
+                <source src="mi princesa.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de videos.
+            </video>
+        </div>
+
+        <div class="floating-elements" id="floating-container"> </div>
+    </div>
+
+    <script>
+        const floatingContainer = document.getElementById("floating-container");
+
+        setInterval(() => {
+            const heart = document.createElement("span");
+            heart.classList.add("heart");
+            heart.innerHTML = "♥";
+            heart.style.left = Math.random() * 100 + "%";
+            heart.style.top = Math.random() * 100 + "%";
+            floatingContainer.appendChild(heart);
+
+            const helloKitty = document.createElement("span");
+            helloKitty.classList.add("hello-kitty");
+            helloKitty.style.left = Math.random() * 100 + "%";
+            helloKitty.style.top = Math.random() * 100 + "%";
+            floatingContainer.appendChild(helloKitty);
+
+            setTimeout(() => {
+                heart.remove();
+                helloKitty.remove();
+            }, 5000);
+        }, 500);
+    </script>
+
+</body>
+
+</html>

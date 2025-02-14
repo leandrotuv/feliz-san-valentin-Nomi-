@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05/08/2024</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            color: #333;
+            background-image: url("corazon.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-y: auto; /* Scroll vertical */
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 95%;
+            margin: auto;
+            background-color: rgba(6, 36, 134, 0.8);
+            box-sizing: border-box;
+            border: 5px solid #ff00c8;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .image-container {
+            width: 100%;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 8px solid #007bff;
+            border-radius: 15px;
+            box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3);
+            transition: opacity 1s ease-in-out;
+        }
+
+        .text-container {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .text-container h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .text-container p {
+            font-size: 1em;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .heart,
+        .star,
+        .flower {
+            position: absolute;
+            color: #fff;
+            animation: float 5s linear infinite;
+            font-size: 1.2em;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: translate(20px, -10px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 0.8;
+            }
+        }
+
+        .link-container {
+            width: 100%;
+            text-align: center;
+        }
+
+        .link-container a {
+            color: #e90acb;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .link-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media query para celulares */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 10px;
+            }
+
+            .text-container h1 {
+                font-size: 1.5em;
+                margin-bottom: 5px;
+            }
+
+            .text-container p {
+                font-size: 0.9em;
+                line-height: 1.2;
+                margin-bottom: 10px;
+            }
+
+            .heart,
+            .star,
+            .flower {
+                font-size: 1em;
+            }
+
+            @keyframes float {
+                50% {
+                    transform: translate(15px, -8px);
+                    opacity: 1;
+                }
+            }
+
+            .link-container a {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-content">
+        <div class="image-container">
+            <img id="imagen-principal" src="nomi3.jpg" alt="Descripción de la imagen">
+        </div>
+        <div class="text-container">
+            <h1>feliz 14 mi princesa hermosa 🥺🥺</h1>
+        <p>bueno mi niña hermosa te quiero decir que te amo mucho gracia por estar mi lado gracias por darme la oportunida de amarte y gracia por hacerme importante en tu vida eres la unica que amo y la que amare chempre recuerda soy tu hombre mi tiquitita hermosa perdon si avece la hago sentir triste yo no quise causar esp bb lo unico que quiero es cuidarte y protejerte mucho mi niña bonita de ojo bonito eres mi leche en polvo sjjs te amooo lo hago con mucho amor y cariño mi apreciada amada nomi te amooo 🥺🥺 recuerdad q yo te amare de verda cholo ño me falle mi tiquitita te amoo un moton recuerdad eres mi princesa dueña de mi ojito jsjsj eres mvd mi tesoro y mi diamente jsjs toy poeta pero lo hago con amor y por felicidad pq soy el primer hombre que te da esto se que no es la gran cosa pero es dificil sjjs te amooo mucho mi blanquite hermosa 🥺🥺</p>
+        </div>
+        <div class="floating-elements" id="floating-container"> </div>
+        <div class="link-container">
+            <a href="index3.html">aplaste aqui mi princesa🥺🤍</a>
+        </div>
+    </div>
+
+    <script>
+        const imagenes = [
+            "mi niña.jpg",
+            "mi1.jpg",
+            "mi2.jpg",
+            "nomi4.jpg"
+           
+            
+        ];
+
+        let indiceImagenActual = 0;
+        const imagenPrincipal = document.getElementById("imagen-principal");
+
+        setInterval(() => {
+            imagenPrincipal.style.opacity = 0;
+
+            setTimeout(() => {
+                imagenPrincipal.src = imagenes[indiceImagenActual];
+                imagenPrincipal.style.opacity = 1;
+                indiceImagenActual = (indiceImagenActual + 1) % imagenes.length;
+            }, 500);
+        }, 2000);
+
+        const floatingContainer = document.getElementById("floating-container");
+        const elements = ["♥", "★", "✿"]; // Array de elementos
+
+        setInterval(() => {
+            const randomElement = elements[Math.floor(Math.random() * elements.length)]; // Elemento aleatorio
+            const x = Math.random() * 100; // Posición x aleatoria
+            const y = Math.random() * 100; // Posición y aleatoria
+
+            const element = document.createElement("span");
+            element.textContent = randomElement;
+            element.classList.add(randomElement === "♥" ? "heart" : randomElement === "★" ? "star" : "flower"); // Clase según el elemento
+            element.style.left = x + "%";
+            element.style.top = y + "%";
+            floatingContainer.appendChild(element);
+
+            setTimeout(() => {
+                element.remove(); // Elimina el elemento después de un tiempo
+            }, 5000); // Ajusta el tiempo de vida de los elementos
+        }, 500); // Ajusta la frecuencia de aparición de los elementos
+    </script>
+
+</body>
+
+</html>
